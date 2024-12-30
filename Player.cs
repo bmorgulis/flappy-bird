@@ -12,14 +12,14 @@ public partial class Player : CharacterBody2D
 		Vector2 velocity = Velocity;
 		
 
-		// Apply gravity
-		if (!IsOnFloor())
-		{
-			velocity.Y += Gravity * (float)delta;
-			velocity.Y = Mathf.Min(velocity.Y, MaxFallSpeed); // Cap fall speed
-
-			velocity.X += Speed;
-		}
+        // Apply gravity
+        if (!IsOnFloor())
+        {
+            velocity.Y += Gravity * (float)delta;
+            velocity.Y = Mathf.Min(velocity.Y, MaxFallSpeed); // Cap fall speed
+        
+            // velocity.X += Speed;
+        }
 
 		// // Horizontal movement
 		// Vector2 inputDirection = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
