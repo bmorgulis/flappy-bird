@@ -1,39 +1,35 @@
 [gd_scene load_steps=7 format=3 uid="uid://cuptaufr308os"]
 
 [ext_resource type="Script" path="res://Player.cs" id="1_3dyfo"]
-[ext_resource type="Texture2D" uid="uid://byt7a32y6dldr" path="res://icon.svg" id="2_a6oy2"]
 [ext_resource type="Texture2D" uid="uid://6vdf0yxb1box" path="res://sprites/background_day.png" id="3_ognxc"]
+[ext_resource type="Texture2D" uid="uid://6wqsya7gjc64" path="res://sprites/bird_orange_0.png" id="3_w04il"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_li5fk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvhee"]
-size = Vector2(998, 152)
+size = Vector2(990.5, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm8t5"]
-size = Vector2(128, 128)
+size = Vector2(128, 98)
 
 [node name="World" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(503.777, 822.489)
+scale = Vector2(6.98921, 6.40282)
+texture = ExtResource("3_ognxc")
 
 [node name="floor" type="StaticBody2D" parent="."]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="floor"]
 modulate = Color(0.211765, 0.164706, 1, 1)
-position = Vector2(503, 580)
-scale = Vector2(1000, 150)
+position = Vector2(491, 1465.5)
+scale = Vector2(974, 33)
 mesh = SubResource("QuadMesh_li5fk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
-position = Vector2(501, 580)
+position = Vector2(498.75, 1467.25)
 shape = SubResource("RectangleShape2D_pvhee")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-texture_repeat = 2
-offset_left = -231.0
-offset_top = -155.0
-offset_right = 1397.0
-offset_bottom = 784.0
-texture = ExtResource("3_ognxc")
-expand_mode = 1
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(65, 66)
@@ -43,12 +39,10 @@ JumpForce = -600.0
 MaxFallSpeed = 3000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(509, 260)
-texture = ExtResource("2_a6oy2")
+position = Vector2(430, 569)
+scale = Vector2(6.83334, 6.83334)
+texture = ExtResource("3_w04il")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(509, 260)
+position = Vector2(429, 571)
 shape = SubResource("RectangleShape2D_qm8t5")
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(508, 260)

@@ -17,8 +17,8 @@ public partial class Player : CharacterBody2D
         {
             velocity.Y += Gravity * (float)delta;
             velocity.Y = Mathf.Min(velocity.Y, MaxFallSpeed); // Cap fall speed
-
-            velocity.X += Speed;
+        
+            // velocity.X += Speed;
         }
 
         // // Horizontal movement
