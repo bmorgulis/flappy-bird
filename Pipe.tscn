@@ -13,15 +13,16 @@ position = Vector2(-10, -1)
 script = ExtResource("1_7r348")
 
 [node name="TopPipe" type="Sprite2D" parent="."]
-position = Vector2(25, 154)
-scale = Vector2(1, 1.9375)
+position = Vector2(68.5, 272.5)
+scale = Vector2(4.34615, 3.41875)
 texture = ExtResource("1_qkcd0")
 
 [node name="CollisionShape2D_Top" type="CollisionShape2D" parent="TopPipe"]
 shape = SubResource("RectangleShape2D_la2gd")
 
 [node name="BottomPipe" type="Sprite2D" parent="."]
-position = Vector2(25, 561)
+position = Vector2(73.5, 1168.5)
+scale = Vector2(4.73077, 3.66875)
 texture = ExtResource("2_uu2rc")
 
 [node name="CollisionShape2D_Bottom" type="CollisionShape2D" parent="BottomPipe"]
