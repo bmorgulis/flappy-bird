@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://do5aeaokfnmor" path="res://sprites/pipe_green_bottom.png" id="2_uu2rc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wovai"]
-size = Vector2(102.5, 543)
+size = Vector2(109, 551.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g11h3"]
 size = Vector2(117, 635)
@@ -27,7 +27,7 @@ texture = ExtResource("2_uu2rc")
 [node name="TopPipeArea" type="Area2D" parent="."]
 
 [node name="TopPipeCollisionShape" type="CollisionShape2D" parent="TopPipeArea"]
-position = Vector2(75.75, 265)
+position = Vector2(72.5, 269.25)
 shape = SubResource("RectangleShape2D_wovai")
 
 [node name="BottomPipeArea" type="Area2D" parent="."]
