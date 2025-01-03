@@ -52,3 +52,14 @@ shape = SubResource("RectangleShape2D_qm8t5")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(508, 260)
+
+[node name="SignUp" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="SignUp"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
