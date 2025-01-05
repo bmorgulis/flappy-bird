@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using flappy_bird;
 
 public partial class GameManager : Node2D
 {
@@ -32,6 +33,7 @@ public partial class GameManager : Node2D
 
         canvasLayer = new CanvasLayer();  
         AddChild(canvasLayer);
+        BirdSpeedTestWithReflection.TestBirdSpeed();
     }
 
     public void GameOver()
