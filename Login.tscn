@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bmiw7cxapciyf"]
+[gd_scene load_steps=12 format=3 uid="uid://b1px71dnuhi3l"]
 
 [ext_resource type="Script" path="res://Login.cs" id="1_doc6b"]
 [ext_resource type="Texture2D" uid="uid://di5hayuuqfqmf" path="res://sprites/flappyBirdBackground.jpg" id="2_lotpt"]
@@ -9,10 +9,10 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lf0uo"]
 
 [sub_resource type="Theme" id="Theme_io1j0"]
-default_font_size = 6
+default_font_size = 10
 
 [sub_resource type="Theme" id="Theme_nrjqc"]
-default_font_size = 6
+default_font_size = 10
 
 [sub_resource type="Theme" id="Theme_xxsgb"]
 default_font = ExtResource("3_4dx5u")
