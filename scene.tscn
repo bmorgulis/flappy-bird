@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cuptaufr308os"]
+[gd_scene load_steps=12 format=3 uid="uid://cuptaufr308os"]
 
 [ext_resource type="Script" path="res://Player.cs" id="1_3dyfo"]
 [ext_resource type="Texture2D" uid="uid://6vdf0yxb1box" path="res://sprites/background_day.png" id="3_ognxc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://PipeSpawner.cs" id="4_iyprp"]
 [ext_resource type="PackedScene" uid="uid://tgjya1xmsw1w" path="res://Pipe.tscn" id="5_ykgrv"]
 [ext_resource type="Script" path="res://GameManager.cs" id="6_wanku"]
+[ext_resource type="FontFile" uid="uid://2rekr6ur5dda" path="res://fonts/font_score.ttf" id="7_2h3j1"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_li5fk"]
 
@@ -14,6 +15,10 @@ size = Vector2(990.5, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm8t5"]
 size = Vector2(128, 98)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6fad5"]
+font = ExtResource("7_2h3j1")
+font_size = 53
 
 [node name="World" type="Node2D"]
 
@@ -58,3 +63,11 @@ PipePrefab = ExtResource("5_ykgrv")
 
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("6_wanku")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 698.0
+offset_top = 45.0
+offset_right = 983.0
+offset_bottom = 126.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_6fad5")

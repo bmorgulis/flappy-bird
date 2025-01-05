@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://tgjya1xmsw1w"]
+[gd_scene load_steps=7 format=3 uid="uid://tgjya1xmsw1w"]
 
 [ext_resource type="Script" path="res://Pipe.cs" id="1_7r348"]
 [ext_resource type="Texture2D" uid="uid://0mppdngncb0g" path="res://sprites/pipe_green_top.png" id="1_qkcd0"]
@@ -9,6 +9,9 @@ size = Vector2(109, 551.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g11h3"]
 size = Vector2(117, 635)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vs61n"]
+size = Vector2(113, 320.5)
 
 [node name="Pipe" type="Node2D"]
 position = Vector2(-10, -1)
@@ -35,3 +38,9 @@ shape = SubResource("RectangleShape2D_wovai")
 [node name="BottomPipeCollisionShape" type="CollisionShape2D" parent="BottomPipeArea"]
 position = Vector2(68.5, 1194.5)
 shape = SubResource("RectangleShape2D_g11h3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(73, 714)
+shape = SubResource("RectangleShape2D_vs61n")
