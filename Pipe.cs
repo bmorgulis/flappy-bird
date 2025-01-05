@@ -1,11 +1,13 @@
 using Godot;
 using System;
+using flappy_bird;
 
 public partial class Pipe : Node2D
 {
     [Export] private float Speed = 200f;
     private Button newGameButton;
-
+    private User User;
+    private int highScore;
     public override void _Ready()
     {
         var topPipeArea = GetNode<Area2D>("TopPipeArea"); //get the top pipe area
@@ -33,11 +35,12 @@ public partial class Pipe : Node2D
         {
             GD.Print("Game Over"); //if body is player, print "Game Over"
             GetTree().Paused = true; // Pause the game
-
+            HighScorePersist.AppendUserToFile(User, highScore); 
+            Console.WriteLine("User successfully added to the file.");
             newGameButton = new Button();
             newGameButton.Text = "New Game";
             newGameButton.AddThemeColorOverride("font_color", new Color(0, 1, 0)); // green text
-
+            
             var viewportSize = GetViewportRect().Size; // Get the size of the visible area of game window
             var buttonSize = new Vector2(200, 50);
             newGameButton.Size = buttonSize;
