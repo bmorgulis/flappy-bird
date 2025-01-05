@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cuptaufr308os"]
+[gd_scene load_steps=10 format=3 uid="uid://cuptaufr308os"]
 
 [ext_resource type="Script" path="res://Player.cs" id="1_3dyfo"]
 [ext_resource type="Texture2D" uid="uid://6vdf0yxb1box" path="res://sprites/background_day.png" id="3_ognxc"]
 [ext_resource type="Texture2D" uid="uid://6wqsya7gjc64" path="res://sprites/bird_orange_0.png" id="3_w04il"]
 [ext_resource type="Script" path="res://PipeSpawner.cs" id="4_iyprp"]
 [ext_resource type="PackedScene" uid="uid://tgjya1xmsw1w" path="res://Pipe.tscn" id="5_ykgrv"]
+[ext_resource type="Script" path="res://GameManager.cs" id="6_wanku"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_li5fk"]
 
@@ -54,3 +55,6 @@ shape = SubResource("RectangleShape2D_qm8t5")
 [node name="PipeSpawner" type="Node2D" parent="Node2D"]
 script = ExtResource("4_iyprp")
 PipePrefab = ExtResource("5_ykgrv")
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("6_wanku")
