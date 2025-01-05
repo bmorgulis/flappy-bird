@@ -9,7 +9,7 @@ class UserInformationHandler {
 
 
 	public bool CreateUser(string email, string password) {
-		string dbFilePath = "C:/Users/bzmor/RiderProjects/flappy_bird/Database.txt";
+		string dbFilePath = "Database.txt";
 		var user = new User(email, hashPassword(password));
 		string userJson = JsonSerializer.Serialize(user);
 		try
@@ -28,7 +28,7 @@ class UserInformationHandler {
 		 
 	}
 	public bool LoginUser(string email, string password) {
-		string dbFilePath = "C:/Users/bzmor/RiderProjects/flappy_bird/Database.txt";
+		string dbFilePath = "Database.txt";
 		string hashedPassword = UserExists(email, dbFilePath);
 		if (hashedPassword != null) {
 			if (CheckPasswordsAreEqual(hashedPassword, password)) {
