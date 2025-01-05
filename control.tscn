@@ -1,0 +1,160 @@
+[gd_scene load_steps=14 format=3 uid="uid://cw0f5rufo1ys3"]
+
+[ext_resource type="Script" path="res://SignUpManager.cs" id="1_pbrso"]
+[ext_resource type="Texture2D" uid="uid://di5hayuuqfqmf" path="res://sprites/flappyBirdBackground.jpg" id="2_jf83e"]
+[ext_resource type="FontFile" uid="uid://2rekr6ur5dda" path="res://fonts/font_score.ttf" id="3_kcp0q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d825l"]
+bg_color = Color(0.435192, 0.435192, 0.435192, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pljv6"]
+bg_color = Color(0.811381, 0.523242, 0.302571, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+shadow_size = 1
+shadow_offset = Vector2(1, 0)
+
+[sub_resource type="Theme" id="Theme_meflw"]
+Panel/styles/panel = SubResource("StyleBoxFlat_d825l")
+VBoxContainer/styles/Background = SubResource("StyleBoxFlat_pljv6")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwnem"]
+draw_center = false
+
+[sub_resource type="Theme" id="Theme_wbh0p"]
+default_font_size = 10
+
+[sub_resource type="Theme" id="Theme_rc03g"]
+default_font_size = 10
+
+[sub_resource type="Theme" id="Theme_bcna1"]
+default_font = ExtResource("3_kcp0q")
+
+[sub_resource type="Theme" id="Theme_ftbqc"]
+default_font = ExtResource("3_kcp0q")
+
+[sub_resource type="Theme" id="Theme_p82e7"]
+default_font = ExtResource("3_kcp0q")
+default_font_size = 40
+
+[sub_resource type="Theme" id="Theme_m317m"]
+
+[node name="SignUp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pbrso")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(604, 358)
+scale = Vector2(1.16962, 1.24287)
+texture = ExtResource("2_jf83e")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(3, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.063
+anchor_top = 0.052
+anchor_right = 0.458
+anchor_bottom = 1.44
+offset_left = 78.576
+offset_top = -21.696
+offset_right = -479.616
+offset_bottom = -882.12
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.00515635
+scale = Vector2(27.3083, 16.3628)
+theme = SubResource("Theme_meflw")
+theme_override_styles/panel = SubResource("StyleBoxFlat_uwnem")
+
+[node name="UserName" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 20.1083
+offset_top = 13.2112
+offset_right = 87.1708
+offset_bottom = 44.2112
+scale = Vector2(0.306386, 0.177612)
+theme = SubResource("Theme_wbh0p")
+alignment = 1
+
+[node name="Password" type="LineEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 20.1047
+offset_top = 23.9064
+offset_right = 87.1672
+offset_bottom = 54.9064
+scale = Vector2(0.309704, 0.170162)
+theme = SubResource("Theme_rc03g")
+alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 26.5361
+offset_top = 31.3681
+offset_right = 93.5361
+offset_bottom = 62.3681
+scale = Vector2(0.118797, 0.152122)
+text = "Sign Up
+"
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 3.29833
+offset_top = 24.5399
+offset_right = 206.298
+offset_bottom = 78.5399
+scale = Vector2(0.0581104, 0.103783)
+text = "Already Have An Account 
+Log In "
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 20.3493
+offset_top = 20.1151
+offset_right = 98.3493
+offset_bottom = 43.1151
+scale = Vector2(0.121013, 0.179812)
+theme = SubResource("Theme_bcna1")
+text = "Password"
+
+[node name="Label3" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 20.0227
+offset_top = 9.23941
+offset_right = 100.023
+offset_bottom = 32.2394
+scale = Vector2(0.115465, 0.176891)
+theme = SubResource("Theme_ftbqc")
+text = "Username"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 2.28338
+offset_top = 16.0536
+offset_right = 145.283
+offset_bottom = 57.0536
+scale = Vector2(0.0984441, 0.168823)
+theme = SubResource("Theme_p82e7")
+text = "Sign Up"
+
+[node name="Label4" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 8.60873
+offset_top = 1.02599
+offset_right = 244.609
+offset_bottom = 24.026
+scale = Vector2(0.115603, 0.257025)
+theme = SubResource("Theme_m317m")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
