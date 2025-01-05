@@ -26,7 +26,7 @@ public partial class PipeSpawner : Node2D
 	var pipeInstance = (Node2D)PipePrefab.Instantiate(); //makes a new instance of a scene
 	float yPos = _random.Next(-200, 200); // get random vertical position between the 2 numbers for the pipe
 	float xPos = GetViewportRect().Size.X; // gets the width of the viewport and put the pipe on right edge of the screen
-	pipeInstance.Position = new Vector2(xPos, yPos);  //asigns position of x and y of the spawned pipe
+	pipeInstance.Position = new Vector2(xPos, yPos);  //assigns position of x and y of the spawned pipe
 	AddChild(pipeInstance);  // add new spawned pipe instance as a child
 }
 }

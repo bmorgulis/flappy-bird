@@ -7,6 +7,16 @@ public partial class Player : CharacterBody2D
 	[Export] private float JumpForce = -300f; // Jump strength
 	[Export] private float MaxFallSpeed = 800f; // Maximum speed while falling
 
+	public override void _Ready()
+	{
+		// Check if GameManager instance exists in the scene
+		if (GameManager.Instance == null)
+		{
+			var gameManager = new GameManager();
+			AddChild(gameManager);
+		}
+	}
+
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
