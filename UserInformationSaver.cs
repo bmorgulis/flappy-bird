@@ -7,6 +7,7 @@ using Godot;
 
 
 class UserInformationHandler {
+	public static string LoggedInUsername { get; private set; }
 
 
 	public bool CreateUser(string email, string password) {
@@ -17,6 +18,7 @@ class UserInformationHandler {
 		{
 			if (UserExists(email, dbFilePath) == null) {
 				File.AppendAllText(dbFilePath, userJson + System.Environment.NewLine);
+				LoggedInUsername = email;
 				return true;
 			}
 			return false;
@@ -33,6 +35,7 @@ class UserInformationHandler {
 		string hashedPassword = UserExists(email, dbFilePath);
 		if (hashedPassword != null) {
 			if (CheckPasswordsAreEqual(hashedPassword, password)) {
+				LoggedInUsername = email;
 				return true;
 			}
 		}

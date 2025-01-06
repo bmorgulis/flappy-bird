@@ -49,6 +49,8 @@ public partial class Pipe : Node2D
 	
 	private void OnBirdPassed(Node body)
 	{
+		string u = GetStoredUsername();
+		GD.Print("User: " + u);
 		_score += 1; // Increment the score
 		_scoreLabel.Text = $"Score: {_score}";
 		GD.Print("Bird passed through the pipe! Score: " + _score);
@@ -60,5 +62,9 @@ public partial class Pipe : Node2D
 	public static int GetScore()
 	{
 		return savedScore;
+	}
+	public string GetStoredUsername()
+	{
+		return UserInformationHandler.LoggedInUsername;
 	}
 }
