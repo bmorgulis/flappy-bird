@@ -41,21 +41,23 @@ public partial class Pipe : Node2D
 			SetScore(_score);
 			UserInformationHandler userInformationHandler = new UserInformationHandler();
 			userInformationHandler.SaveScore();
-			//Todo Zerach SAVE THE SCORE HERE
-			_score = 0; // Reset the score
+			//Todo Zerach Display high score
+			_score = 0; // Reset the score to 0 for the next game
 			GameManager.Instance.GameOver();
 		}
 	}
 	
 	private void OnBirdPassed(Node body)
 	{
-		string u = GetStoredUsername();
-		GD.Print("User: " + u);
+		string currentUsername = GetStoredUsername(); // Get the current username for saving the score to the correct user
+		GD.Print("User: " + currentUsername);
+		
 		_score += 1; // Increment the score
-		_scoreLabel.Text = $"Score: {_score}";
+		_scoreLabel.Text = $"Score: {_score}"; // Update the score label
+		
 		GD.Print("Bird passed through the pipe! Score: " + _score);
 	}
-	public void SetScore(int score)
+	private void SetScore(int score)
 	{
 		savedScore = score;
 	}
@@ -63,7 +65,7 @@ public partial class Pipe : Node2D
 	{
 		return savedScore;
 	}
-	public string GetStoredUsername()
+	private string GetStoredUsername()
 	{
 		return UserInformationHandler.LoggedInUsername;
 	}

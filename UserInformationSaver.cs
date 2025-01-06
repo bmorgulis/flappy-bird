@@ -9,7 +9,7 @@ using System.Linq;
 
 
 class UserInformationHandler {
-	public static string LoggedInUsername { get; private set; }
+	public static string LoggedInUsername { get; private set; }  
 
 
 	public bool CreateUser(string email, string password) {
@@ -20,7 +20,7 @@ class UserInformationHandler {
 		{
 			if (UserExists(email, dbFilePath) == null) {
 				File.AppendAllText(dbFilePath, userJson + System.Environment.NewLine);
-				LoggedInUsername = email;
+				LoggedInUsername = email; // Set the current username
 				return true;
 			}
 			return false;
@@ -37,7 +37,7 @@ class UserInformationHandler {
 		string hashedPassword = UserExists(email, dbFilePath);
 		if (hashedPassword != null) {
 			if (CheckPasswordsAreEqual(hashedPassword, password)) {
-				LoggedInUsername = email;
+				LoggedInUsername = email; // Set the current username
 				return true;
 			}
 		}
@@ -74,12 +74,12 @@ class UserInformationHandler {
 		string dbFilePath = "Database.txt";
 		var users = new List<User>(); // Initialize the users list
 
-		var lines = File.ReadAllLines(dbFilePath);
+		var lines = File.ReadAllLines(dbFilePath); //read lines in file
 
-		foreach (var line in lines)
+		foreach (var line in lines) //	loop through each line
 		{
-			var user = JsonSerializer.Deserialize<User>(line);
-			if (user.Email == LoggedInUsername)
+			var user = JsonSerializer.Deserialize<User>(line); // Deserialize the line to a User object
+			if (user.Email == LoggedInUsername)  
 			{
 				// Update the high score if the current score is higher
 				if (currentScore > user.HighScore)
@@ -87,11 +87,10 @@ class UserInformationHandler {
 					user.HighScore = currentScore;
 				}
 			}
-			users.Add(user);
+			users.Add(user); // Add the user to the list of users
 		}
 		// Serialize the updated user list and write it back to the file
-		var updatedLines = users.Select(user => JsonSerializer.Serialize(user)).ToArray();
-		File.WriteAllLines(dbFilePath, updatedLines);
+		var updatedLines = users.Select(user => JsonSerializer.Serialize(user)).ToArray();  
+		File.WriteAllLines(dbFilePath, updatedLines); // Write the updated lines to the file 
 	}
-	
 }
