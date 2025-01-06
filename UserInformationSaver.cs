@@ -3,7 +3,9 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
+using System.Collections.Generic;
 using Godot;
+using System.Linq;
 
 
 class UserInformationHandler {
@@ -69,6 +71,27 @@ class UserInformationHandler {
 	{
 		int currentScore = Pipe.GetScore();
 		GD.Print("The current score is: " + currentScore);
+		string dbFilePath = "Database.txt";
+		var users = new List<User>(); // Initialize the users list
+
+		var lines = File.ReadAllLines(dbFilePath);
+
+		foreach (var line in lines)
+		{
+			var user = JsonSerializer.Deserialize<User>(line);
+			if (user.Email == LoggedInUsername)
+			{
+				// Update the high score if the current score is higher
+				if (currentScore > user.HighScore)
+				{
+					user.HighScore = currentScore;
+				}
+			}
+			users.Add(user);
+		}
+		// Serialize the updated user list and write it back to the file
+		var updatedLines = users.Select(user => JsonSerializer.Serialize(user)).ToArray();
+		File.WriteAllLines(dbFilePath, updatedLines);
 	}
 	
 }
