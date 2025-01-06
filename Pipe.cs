@@ -6,6 +6,8 @@ public partial class Pipe : Node2D
 	[Export] private float Speed = 200f;
 	private static int _score = 0; // Keep track of the score
 	private Label _scoreLabel; // Reference to the score label
+	public static int savedScore = 0;
+
 	public override void _Ready()
 	{
 		
@@ -36,6 +38,9 @@ public partial class Pipe : Node2D
 	{
 		if (body is Player)
 		{
+			SetScore(_score);
+			UserInformationHandler userInformationHandler = new UserInformationHandler();
+			userInformationHandler.SaveScore();
 			//Todo Zerach SAVE THE SCORE HERE
 			_score = 0; // Reset the score
 			GameManager.Instance.GameOver();
@@ -47,5 +52,13 @@ public partial class Pipe : Node2D
 		_score += 1; // Increment the score
 		_scoreLabel.Text = $"Score: {_score}";
 		GD.Print("Bird passed through the pipe! Score: " + _score);
+	}
+	public void SetScore(int score)
+	{
+		savedScore = score;
+	}
+	public static int GetScore()
+	{
+		return savedScore;
 	}
 }

@@ -3,6 +3,7 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
+using Godot;
 
 
 class UserInformationHandler {
@@ -15,7 +16,7 @@ class UserInformationHandler {
 		try
 		{
 			if (UserExists(email, dbFilePath) == null) {
-				File.AppendAllText(dbFilePath, userJson + Environment.NewLine);
+				File.AppendAllText(dbFilePath, userJson + System.Environment.NewLine);
 				return true;
 			}
 			return false;
@@ -60,6 +61,11 @@ class UserInformationHandler {
 	}
 	private bool CheckPasswordsAreEqual(string hashedPassword, string password) {
 		return hashedPassword.Equals(hashPassword(password));
+	}
+	public void SaveScore()
+	{
+		int currentScore = Pipe.GetScore();
+		GD.Print("The current score is: " + currentScore);
 	}
 	
 }
